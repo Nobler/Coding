@@ -19,28 +19,27 @@
     * task是一系列Activity的集合，Activity通过back stack进行维护。
     * 当启动了新的task或者点击了home键，当前的task会被放置到background。
 2. launch mode
-    定义了启动的Activity与当前task是如何关联的。两种方式指定：
+	定义了启动的Activity与当前task是如何关联的。两种方式指定：
     * **通过android:launchMode**
         * standard
             创建一个新的Activity，运行在启动该Activity的Activity所在的task中。
         * singleTop
             如果要创建的Activity已经位于task的栈顶，仅回调该Activity的onNewIntent；否则创建新的Activity，无论在task中是否存在该Activity的实例。
         * singleTask
-        
-            ```
-            task name -> taskAffinity
-            if (task exist) {
-                if (activity exist) {
-                    clearTop
-                    call onNewIntent
-                } else {
-                    create activity and add to task
-                }
-            } else {
-                create task
-                create activity and add to task
-            }
-            ```
+		```
+		task name -> taskAffinity
+		if (task exist) {
+		    if (activity exist) {
+		        clearTop
+		        call onNewIntent
+		    } else {
+		        create activity and add to task
+		    }
+		} else {
+		    create task
+		    create activity and add to task
+		}
+		```
         * singleInstance
             在singleTask的基础上，限定了该Activity独占一个task。
     * **通过intent.addFlags**。可以修改目标Activity launchMode中定义的行为。实际情况中，各种flag的组合加上launchMode的设置，最终的行为远比四种预设要复杂。
@@ -75,6 +74,5 @@ Activity启动分显式调用和隐式调用。
 
 ### IPC机制
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzA1MjU2OTUsLTIwODg3NDY2MTJdfQ
-==
+eyJoaXN0b3J5IjpbMzIwMTg3NDUxLC0yMDg4NzQ2NjEyXX0=
 -->
