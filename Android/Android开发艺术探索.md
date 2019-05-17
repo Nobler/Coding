@@ -1,7 +1,7 @@
-### 1. Activity的生命周期和启动模式
-#### 1. 生命周期
+## 1. Activity的生命周期和启动模式
+### 1. 生命周期
 1. 基本情况
-	* onStart和onStop根据是否可见被回调；onResume和onPause根据是否在前台被回调。实际使用中没有其他区别。
+    * onStart和onStop根据是否可见被回调；onResume和onPause根据是否在前台被回调。实际使用中没有其他区别。
     * onRestart当由不可见变为可见时回调。
     * 由A启动B，在A的onPause执行完之前，B不会被创建。所以在onPause中不能执行过多的操作。
 2. 异常情况
@@ -13,7 +13,7 @@
         * 每个View也实现了这两个回调，所以不同的View会有自己的默认保存和恢复操作。
     * android:configChanges指定希望去处理的一些configs，而不是让Activity重建。常见的如locale/orientation/screenSize/keyboardHidden，当这些configs改变时，Activity不会重建，而是回调onConfigurationChanged。screenSize为API 13引入，屏幕旋转时也会改变，所以要与orientation同时指定。
     * 内存不足时系统按照优先级去杀死目标Activity所在的进程。如果一个进程没有四大组件在执行，优先级会很低。
-#### 2. 启动模式
+### 2. 启动模式
 综合[官方文档](https://developer.android.com/guide/components/activities/tasks-and-back-stack)
 1. task和back stack
     * task是一系列Activity的集合，Activity通过back stack进行维护。
@@ -75,5 +75,6 @@ Activity启动分显式调用和隐式调用。
 
 ### IPC机制
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5Mzg2NjA0MiwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbLTE2NzA1MjU2OTUsLTIwODg3NDY2MTJdfQ
+==
 -->
