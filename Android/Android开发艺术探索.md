@@ -26,20 +26,7 @@
         * singleTop
             如果要创建的Activity已经位于task的栈顶，仅回调该Activity的onNewIntent；否则创建新的Activity，无论在task中是否存在该Activity的实例。
         * singleTask
-		```
-	task name -> taskAffinity
-	if (task exist) {
-	  if (activity exist) {
-	      clearTop
-	      call onNewIntent
-	  } else {
-	      create activity and add to task
-	  }
-	} else {
-	  create task
-	  create activity and add to task
-	}
-		```
+    enter code here
         * singleInstance
             在singleTask的基础上，限定了该Activity独占一个task。
     * **通过intent.addFlags**。可以修改目标Activity launchMode中定义的行为。实际情况中，各种flag的组合加上launchMode的设置，最终的行为远比四种预设要复杂。
@@ -74,5 +61,6 @@ Activity启动分显式调用和隐式调用。
 
 ### IPC机制
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzOTQ5Njc5NSwtMjA4ODc0NjYxMl19
+eyJoaXN0b3J5IjpbMjAzNjIyNzQ2MCwxMzM5NDk2Nzk1LC0yMD
+g4NzQ2NjEyXX0=
 -->
